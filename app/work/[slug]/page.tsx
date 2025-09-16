@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface WorkExperiencePageProps {
   params: {
@@ -13,6 +14,7 @@ const workExperiences: Record<string, any> = {
     company: "SecuX Technology",
     period: "May.2024 - June.2025",
     summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions.",
+    logo: "/secux.jpg",
     content: {
       overview: "During my time at SecuX Technology, I spearheaded multiple high-impact initiatives that significantly enhanced the company's blockchain wallet solutions and backend infrastructure. My work directly contributed to substantial revenue growth and operational improvements.",
       sections: [
@@ -40,6 +42,7 @@ const workExperiences: Record<string, any> = {
     company: "Phoenix Silicon International Corporation",
     period: "Aug.2022 - Jan.2024",
     summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing.",
+    logo: "/psi.png",
     content: {
       overview: "At Phoenix Silicon International Corporation, I led a comprehensive transformation of the company's electronic wafer mapping (eMap) infrastructure. This project involved replacing legacy systems with modern, high-performance solutions that dramatically improved operational efficiency and cost savings.",
       sections: [
@@ -80,10 +83,23 @@ export default function WorkExperiencePage({ params }: WorkExperiencePageProps) 
 
       <article className="prose prose-gray max-w-none">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">{experience.title}</h1>
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-            <h2 className="text-xl text-gray-700">{experience.company}</h2>
-            <span className="text-gray-600">{experience.period}</span>
+          <div className="flex items-start gap-4 mb-4">
+            <div className="flex-shrink-0">
+              <Image
+                src={experience.logo}
+                alt={`${experience.company} Logo`}
+                width={64}
+                height={64}
+                className="w-16 h-16 object-contain rounded-lg"
+              />
+            </div>
+            <div className="flex-1">
+              <h1 className="text-3xl font-bold mb-2">{experience.title}</h1>
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                <h2 className="text-xl text-gray-700">{experience.company}</h2>
+                <span className="text-gray-600">{experience.period}</span>
+              </div>
+            </div>
           </div>
           <p className="text-lg text-gray-600 leading-relaxed">{experience.summary}</p>
         </header>

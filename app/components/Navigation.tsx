@@ -9,7 +9,7 @@ export default function Navigation() {
     { name: 'about', path: '/about' },
     { name: 'work', path: '/work' },
     { name: 'projects', path: '/projects' },
-    { name: 'accomplishments', path: '/accomplishments' }
+    { name: 'awards', path: '/awards' }
   ]
 
   return (

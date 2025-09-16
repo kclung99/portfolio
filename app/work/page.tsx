@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Work() {
   const experiences = [
@@ -8,6 +9,7 @@ export default function Work() {
       company: "SecuX Technology",
       period: "May.2024 - June.2025",
       summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions.",
+      logo: "/secux.jpg",
       highlights: [
         "Doubled supported blockchain networks within 6 months",
         "Generated tens of thousands in monthly revenue through swap service",
@@ -20,6 +22,7 @@ export default function Work() {
       company: "Phoenix Silicon International Corporation",
       period: "Aug.2022 - Jan.2024",
       summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing.",
+      logo: "/psi.png",
       highlights: [
         "90x improvement in processing speed",
         "50% reduction in data storage",
@@ -36,14 +39,27 @@ export default function Work() {
         {experiences.map((exp) => (
           <Link key={exp.id} href={`/work/${exp.id}`}>
             <div className="group cursor-pointer border border-gray-200 rounded-lg p-6 hover:border-gray-300 hover:shadow-md transition-all">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
-                <div>
-                  <h2 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
-                    {exp.title}
-                  </h2>
-                  <h3 className="text-lg text-gray-700">{exp.company}</h3>
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0">
+                  <Image
+                    src={exp.logo}
+                    alt={`${exp.company} Logo`}
+                    width={56}
+                    height={56}
+                    className="w-14 h-14 object-contain rounded-lg"
+                  />
                 </div>
-                <span className="text-sm text-gray-600 mt-1 sm:mt-0">{exp.period}</span>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
+                    <div>
+                      <h2 className="text-xl font-semibold group-hover:text-blue-600 transition-colors">
+                        {exp.title}
+                      </h2>
+                      <h3 className="text-lg text-gray-700">{exp.company}</h3>
+                    </div>
+                    <span className="text-sm text-gray-600 mt-1 sm:mt-0">{exp.period}</span>
+                  </div>
+                </div>
               </div>
 
               <p className="text-gray-700 mb-4 leading-relaxed">{exp.summary}</p>
