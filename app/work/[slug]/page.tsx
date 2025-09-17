@@ -8,7 +8,29 @@ interface WorkExperiencePageProps {
   }
 }
 
-const workExperiences: Record<string, any> = {
+interface WorkExperience {
+  title: string
+  company: string
+  period: string
+  summary: string
+  logo: string
+  content: {
+    overview: string
+    sections: Array<{
+      title: string
+      content: string
+    }>
+  }
+}
+
+export async function generateStaticParams() {
+  return [
+    { slug: 'secux' },
+    { slug: 'psi' }
+  ]
+}
+
+const workExperiences: Record<string, WorkExperience> = {
   secux: {
     title: "Software Engineer",
     company: "SecuX Technology",
@@ -110,7 +132,7 @@ export default function WorkExperiencePage({ params }: WorkExperiencePageProps) 
             <p className="text-gray-700 leading-relaxed">{experience.content.overview}</p>
           </section>
 
-          {experience.content.sections.map((section: any, index: number) => (
+          {experience.content.sections.map((section, index) => (
             <section key={index}>
               <h3 className="text-xl font-semibold mb-4">{section.title}</h3>
               <p className="text-gray-700 leading-relaxed">{section.content}</p>

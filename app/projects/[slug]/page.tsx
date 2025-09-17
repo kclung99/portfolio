@@ -7,7 +7,26 @@ interface ProjectPageProps {
   }
 }
 
-const projects: Record<string, any> = {
+interface Project {
+  title: string
+  summary: string
+  technologies: string[]
+  content: {
+    overview: string
+    sections: Array<{
+      title: string
+      content: string
+    }>
+  }
+}
+
+export async function generateStaticParams() {
+  return [
+    { slug: 'legal-flashcards' }
+  ]
+}
+
+const projects: Record<string, Project> = {
   "legal-flashcards": {
     title: "Smart Flashcards for Legal Exam Preparation",
     summary: "Revolutionary AI-powered study tool that transforms legal exam preparation through intelligent content generation and adaptive learning.",
@@ -77,7 +96,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             <p className="text-gray-700 leading-relaxed">{project.content.overview}</p>
           </section>
 
-          {project.content.sections.map((section: any, index: number) => (
+          {project.content.sections.map((section, index) => (
             <section key={index}>
               <h3 className="text-xl font-semibold mb-4">{section.title}</h3>
               <p className="text-gray-700 leading-relaxed">{section.content}</p>

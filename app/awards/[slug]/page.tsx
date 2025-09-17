@@ -7,7 +7,30 @@ interface AwardPageProps {
   }
 }
 
-const awards: Record<string, any> = {
+interface Award {
+  title: string
+  type: string
+  event: string
+  location: string
+  year: string
+  summary: string
+  content: {
+    overview: string
+    sections: Array<{
+      title: string
+      content: string
+    }>
+  }
+}
+
+export async function generateStaticParams() {
+  return [
+    { slug: 'copper-metal-drawing' },
+    { slug: 'elderly-limb-identification' }
+  ]
+}
+
+const awards: Record<string, Award> = {
   "copper-metal-drawing": {
     title: "Application of Artificial Intelligence Technology in the Optimization of Copper Metal Drawing Process",
     type: "Best Conference Paper Award",
@@ -107,7 +130,7 @@ export default function AwardPage({ params }: AwardPageProps) {
             <p className="text-gray-700 leading-relaxed">{award.content.overview}</p>
           </section>
 
-          {award.content.sections.map((section: any, index: number) => (
+          {award.content.sections.map((section, index) => (
             <section key={index}>
               <h3 className="text-xl font-semibold mb-4">{section.title}</h3>
               <p className="text-gray-700 leading-relaxed">{section.content}</p>
