@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { getAssetPath } from '../lib/utils'
 
 export default function Work() {
   const experiences = [
@@ -9,7 +10,7 @@ export default function Work() {
       company: "SecuX Technology",
       period: "May.2024 - June.2025",
       summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions.",
-      logo: "/secux.jpg",
+      logo: getAssetPath("/secux.jpg"),
       highlights: [
         "Doubled supported blockchain networks within 6 months",
         "Generated tens of thousands in monthly revenue through swap service",
@@ -22,7 +23,7 @@ export default function Work() {
       company: "Phoenix Silicon International Corporation",
       period: "Aug.2022 - Jan.2024",
       summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing.",
-      logo: "/psi.png",
+      logo: getAssetPath("/psi.png"),
       highlights: [
         "90x improvement in processing speed",
         "50% reduction in data storage",

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import { getAssetPath } from '../../lib/utils'
 
 interface WorkExperiencePageProps {
   params: {
@@ -36,7 +37,7 @@ const workExperiences: Record<string, WorkExperience> = {
     company: "SecuX Technology",
     period: "May.2024 - June.2025",
     summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions.",
-    logo: "/secux.jpg",
+    logo: getAssetPath("/secux.jpg"),
     content: {
       overview: "During my time at SecuX Technology, I spearheaded multiple high-impact initiatives that significantly enhanced the company's blockchain wallet solutions and backend infrastructure. My work directly contributed to substantial revenue growth and operational improvements.",
       sections: [
@@ -64,7 +65,7 @@ const workExperiences: Record<string, WorkExperience> = {
     company: "Phoenix Silicon International Corporation",
     period: "Aug.2022 - Jan.2024",
     summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing.",
-    logo: "/psi.png",
+    logo: getAssetPath("/psi.png"),
     content: {
       overview: "At Phoenix Silicon International Corporation, I led a comprehensive transformation of the company's electronic wafer mapping (eMap) infrastructure. This project involved replacing legacy systems with modern, high-performance solutions that dramatically improved operational efficiency and cost savings.",
       sections: [

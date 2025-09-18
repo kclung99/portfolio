@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getAssetPath } from '../lib/utils'
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
         <div className="flex-shrink-0 mb-6 md:mb-0">
           <div className="w-32 h-32 md:w-40 md:h-40 mx-auto md:mx-0">
             <Image
-              src="/cap.JPG"
+              src={getAssetPath("/cap.JPG")}
               alt="Kuan-Cheng Lung"
               width={160}
               height={160}
@@ -22,7 +23,7 @@ export default function About() {
             Software Engineer with expertise in blockchain technology, full-stack development, and system optimization.
           </p>
           <a
-            href="/kuan-cheng-lung-resume.pdf"
+            href={getAssetPath("/kuan-cheng-lung-resume.pdf")}
             download="Kuan-Cheng-Lung-Resume.pdf"
             className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors font-medium"
           >
@@ -69,7 +70,7 @@ export default function About() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <Image
-                  src="/uiuc.png"
+                  src={getAssetPath("/uiuc.png")}
                   alt="UIUC Logo"
                   width={48}
                   height={48}
@@ -87,7 +88,7 @@ export default function About() {
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <Image
-                  src="/ntu.png"
+                  src={getAssetPath("/ntu.png")}
                   alt="NTU Logo"
                   width={48}
                   height={48}
