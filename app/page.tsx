@@ -6,13 +6,13 @@ export default function Home() {
     <div className="max-w-3xl">
       <div className="flex flex-col md:flex-row md:items-center md:gap-8 mb-8">
         <div className="flex-shrink-0 mb-6 md:mb-0">
-          <div className="w-32 h-32 md:w-40 md:h-40 mx-auto md:mx-0">
+          <div className="w-32 h-32 md:w-48 md:h-48 mx-auto md:mx-0 mt-4">
             <Image
               src={getAssetPath("/cap.JPG")}
               alt="Kuan-Cheng Lung"
-              width={160}
-              height={160}
-              className="w-full h-full object-cover rounded-full border-4 border-gray-200 shadow-lg"
+              width={400}
+              height={400}
+              className="w-full h-full object-cover object-[65%_75%] rounded-full shadow-lg"
               priority
             />
           </div>

@@ -2,21 +2,27 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
 export default function Navigation() {
   const pathname = usePathname()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const tabs = [
     { name: 'about', path: '/' },
     { name: 'work', path: '/work' },
-    { name: 'projects', path: '/projects' },
-    { name: 'awards', path: '/awards' }
+    { name: 'projects', path: '/projects' }
   ]
 
   return (
     <nav className="border-b border-gray-200 mb-8">
-      <div className="flex space-x-8">
+      <div className="flex justify-center space-x-8">
         {tabs.map((tab) => {
-          const isActive = pathname === tab.path || (tab.path === '/' && pathname === '/')
+          const isActive = mounted && (pathname === tab.path || (tab.path === '/' && pathname === '/'))
           return (
             <Link
               key={tab.name}

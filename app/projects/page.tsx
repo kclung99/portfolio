@@ -5,7 +5,6 @@ export default function Projects() {
     {
       id: "legal-flashcards",
       title: "Smart Flashcards for Legal Exam Preparation",
-      description: "An AI-powered flashcard application tailored for bar exam preparation, featuring intelligent content generation and spaced repetition algorithms.",
       summary: "Revolutionary AI-powered study tool that transforms legal exam preparation through intelligent content generation and adaptive learning.",
       highlights: [
         "30% reduction in notetaking time through automated flashcard generation",
@@ -13,6 +12,28 @@ export default function Projects() {
         "80% improvement in recall accuracy with custom spaced-repetition algorithm"
       ],
       technologies: ["AI/ML", "NoSQL", "Real-time Sync", "Cross-device Development", "Natural Language Processing"]
+    },
+    {
+      id: "copper-metal-drawing",
+      title: "AI Optimization for Copper Metal Drawing Process",
+      summary: "Groundbreaking research applying AI algorithms to optimize industrial copper metal drawing processes, achieving significant efficiency improvements.",
+      highlights: [
+        "Developed novel AI optimization algorithms for metal drawing processes",
+        "Achieved measurable improvements in industrial manufacturing efficiency",
+        "Recognized as best paper among international research submissions"
+      ],
+      technologies: ["AI/ML", "Manufacturing Optimization", "Process Control", "Data Analytics"]
+    },
+    {
+      id: "elderly-limb-identification",
+      title: "AI-Powered Elderly Limb Condition Monitoring System",
+      summary: "Innovative AI-powered system for monitoring and identifying limb conditions in elderly patients, earning top recognition for both technical excellence and design innovation.",
+      highlights: [
+        "Created AI system for elderly healthcare monitoring",
+        "Won both Gold Medal and Best Product Design awards",
+        "Combined technical innovation with user-centered design principles"
+      ],
+      technologies: ["AI/ML", "Computer Vision", "Healthcare Technology", "User Experience Design"]
     }
   ]
 
