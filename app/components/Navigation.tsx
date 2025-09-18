@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 export default function Navigation() {
   const pathname = usePathname()
   const tabs = [
-    { name: 'about', path: '/about' },
+    { name: 'about', path: '/' },
     { name: 'work', path: '/work' },
     { name: 'projects', path: '/projects' },
     { name: 'awards', path: '/awards' }
@@ -16,7 +16,7 @@ export default function Navigation() {
     <nav className="border-b border-gray-200 mb-8">
       <div className="flex space-x-8">
         {tabs.map((tab) => {
-          const isActive = pathname === tab.path
+          const isActive = pathname === tab.path || (tab.path === '/' && pathname === '/')
           return (
             <Link
               key={tab.name}
