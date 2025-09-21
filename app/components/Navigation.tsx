@@ -19,7 +19,7 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="border-b border-gray-200 mb-8">
+    <nav className="border-b border-gray-200 mb-8 pb-8">
       <div className="flex justify-center space-x-8">
         {tabs.map((tab) => {
           const isActive = mounted && (pathname === tab.path || (tab.path === '/' && pathname === '/'))

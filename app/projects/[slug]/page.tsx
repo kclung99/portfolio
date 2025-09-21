@@ -52,19 +52,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   return (
     <div className="max-w-4xl">
-      <div className="mb-6">
-        <Link
-          href="/projects"
-          className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
-        >
-          ← Back to Projects
-        </Link>
-      </div>
-
       <article className="prose prose-gray max-w-none">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
-          <p className="text-lg text-gray-600 leading-relaxed mb-4">{project.summary}</p>
+          <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
+          <p className="text-sm text-gray-600 leading-relaxed mb-4">{project.summary}</p>
 
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech: string, index: number) => (

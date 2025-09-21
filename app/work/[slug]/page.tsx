@@ -1,9 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import Image from 'next/image'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { getAssetPath } from '../../lib/utils'
 import { getMarkdownContent } from '../../lib/markdown'
 
 interface WorkExperiencePageProps {
@@ -17,7 +15,6 @@ interface WorkExperience {
   company: string
   period: string
   summary: string
-  logo: string
 }
 
 export async function generateStaticParams() {
@@ -32,15 +29,13 @@ const workExperiences: Record<string, WorkExperience> = {
     title: "Software Engineer",
     company: "SecuX Technology",
     period: "May.2024 - June.2025",
-    summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions.",
-    logo: getAssetPath("/secux.jpg")
+    summary: "Led blockchain technology expansion and backend optimization for cryptocurrency wallet solutions."
   },
   psi: {
     title: "Software Engineer",
     company: "Phoenix Silicon International Corporation",
     period: "Aug.2022 - Jan.2024",
-    summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing.",
-    logo: getAssetPath("/psi.png")
+    summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing."
   }
 }
 
@@ -54,36 +49,14 @@ export default function WorkExperiencePage({ params }: WorkExperiencePageProps) 
 
   return (
     <div className="max-w-4xl">
-      <div className="mb-6">
-        <Link
-          href="/work"
-          className="text-blue-600 hover:text-blue-700 text-sm transition-colors"
-        >
-          ← Back to Work Experience
-        </Link>
-      </div>
-
       <article className="prose prose-gray max-w-none">
         <header className="mb-8">
-          <div className="flex items-start gap-4 mb-4">
-            <div className="flex-shrink-0">
-              <Image
-                src={experience.logo}
-                alt={`${experience.company} Logo`}
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain rounded-lg"
-              />
-            </div>
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold mb-2">{experience.title}</h1>
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
-                <h2 className="text-xl text-gray-700">{experience.company}</h2>
-                <span className="text-gray-600">{experience.period}</span>
-              </div>
-            </div>
+          <h1 className="text-2xl font-bold mb-2">{experience.title}</h1>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
+            <h2 className="text-base text-gray-600">{experience.company}</h2>
+            <span className="text-gray-600 text-sm">{experience.period}</span>
           </div>
-          <p className="text-lg text-gray-600 leading-relaxed">{experience.summary}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{experience.summary}</p>
         </header>
 
         <div className="markdown-content">
