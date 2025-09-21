@@ -3,7 +3,7 @@ export default function Home() {
   return (
     <div className="max-w-4xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-4">hi, I'm ... KC</h1>
+        <h1 className="text-2xl font-bold mb-4">hi, I&apos;m ... KC</h1>
         <p className="text-sm text-gray-600 mb-6">
           Software Engineer with expertise in blockchain technology, full-stack development, and system optimization.
         </p>
