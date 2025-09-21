@@ -31,12 +31,12 @@ export default function RootLayout({
               {children}
             </main>
             <footer className="mt-16 pt-8 border-t border-gray-200 text-sm text-gray-600">
-              <div className="flex justify-between items-center">
-                <div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
+                <div className="text-center sm:text-left">
                   ⓒ {new Date().getFullYear()} KC Lung
                 </div>
-                <div className="flex gap-4">
-                  <a href="mailto:kclung99@gmail.com" className="text-blue-600 hover:text-blue-700 underline">
+                <div className="flex flex-col gap-2 items-center sm:flex-row sm:gap-4">
+                  <a href="mailto:kclung99@gmail.com" className="text-blue-600 hover:text-blue-700 underline break-all">
                     kclung99@gmail.com
                   </a>
                   <a href="https://github.com/kclung99" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
