@@ -38,9 +38,10 @@ const workExperiences: Record<string, WorkExperience> = {
   }
 }
 
-export default function WorkExperiencePage({ params }: WorkExperiencePageProps) {
-  const markdownContent = getMarkdownContent('work', params.slug)
-  const experience = workExperiences[params.slug]
+export default async function WorkExperiencePage({ params }: WorkExperiencePageProps) {
+  const { slug } = await params
+  const markdownContent = getMarkdownContent('work', slug)
+  const experience = workExperiences[slug]
 
   if (!markdownContent || !experience) {
     notFound()
@@ -62,13 +63,13 @@ export default function WorkExperiencePage({ params }: WorkExperiencePageProps) 
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{
-              h1: ({children}) => <h3 className="text-xl font-semibold mb-4 mt-8">{children}</h3>,
-              h2: ({children}) => <h3 className="text-xl font-semibold mb-4 mt-8">{children}</h3>,
-              h3: ({children}) => <h3 className="text-xl font-semibold mb-4 mt-8">{children}</h3>,
-              p: ({children}) => <p className="text-gray-700 leading-relaxed mb-4">{children}</p>,
-              ul: ({children}) => <ul className="list-disc list-inside mb-4 text-gray-700">{children}</ul>,
-              ol: ({children}) => <ol className="list-decimal list-inside mb-4 text-gray-700">{children}</ol>,
-              li: ({children}) => <li className="mb-1">{children}</li>,
+              h1: ({children}) => <h3 className="text-2xl font-semibold mb-4 mt-8">{children}</h3>,
+              h2: ({children}) => <h3 className="text-base font-semibold mb-4 mt-8">{children}</h3>,
+              h3: ({children}) => <h3 className="text-base font-semibold mb-4 mt-8">{children}</h3>,
+              p: ({children}) => <p className="text-sm text-gray-700 leading-relaxed mb-4">{children}</p>,
+              ul: ({children}) => <ul className="list-disc list-inside mb-4 text-sm text-gray-700 [&_ul]:list-disc [&_ul]:list-inside [&_ul]:ml-4 [&_ul]:mb-2">{children}</ul>,
+              ol: ({children}) => <ol className="list-decimal list-inside mb-4 text-sm text-gray-700">{children}</ol>,
+              li: ({children}) => <li className="mb-1 text-sm leading-relaxed">{children}</li>,
               strong: ({children}) => <strong className="font-semibold">{children}</strong>,
               em: ({children}) => <em className="italic">{children}</em>,
               code: ({children}) => <code className="bg-gray-100 px-1 py-0.5 rounded text-sm">{children}</code>,
