@@ -4,12 +4,12 @@ export default function Home() {
   return (
     <div className="max-w-4xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-bold mb-4">hi, I&apos;m ... KC</h1>
+        <h1 className="text-2xl font-bold mb-4">hi, I'm ... KC</h1>
         <p className="text-sm text-gray-600 mb-6">
           currently a grad student @ uiuc.  <br />
           <br />
-          I&apos;m a software engineer working with backend and blockchain mainly.  <br />
-          <Link href="/work" className="text-blue-600 underline hover:no-underline">here</Link>&apos;s a more detailed look at what I&apos;ve worked on. <br />
+          I'm a software engineer working with backend and blockchain mainly.  <br />
+          <Link href="/work" className="text-blue-600 underline hover:no-underline">here</Link>'s a more detailed look at what I've worked on. <br />
           <br />
           I also explore random stuffs on the side, tech or not. <br />
           you can check out those projects <Link href="/projects" className="text-blue-600 underline hover:no-underline">here</Link>.
