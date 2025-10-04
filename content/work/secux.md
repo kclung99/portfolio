@@ -9,6 +9,9 @@ This post covers the technical architecture, challenges, and solutions across th
 ## Cold Wallet Architecture
 Cold wallets store private keys on-device and sign transactions locally. The mobile/desktop app handles balance tracking, transaction building, and network communication via our backend services.
 
+![Cold Wallet](/secux-neo.jpg)
+*Figure 1: Code wallet example (SecuX Neo X)*
+
 ## Tech Stack
 Node.js microservices on Google Cloud Platform with Cloudflare → Nginx → services. Socket.IO for real-time client updates, REST for inter-service communication, Postgres + Hasura for data, Docker Compose for deployment, Prometheus/Grafana for monitoring.
 
@@ -17,6 +20,9 @@ Node.js microservices on Google Cloud Platform with Cloudflare → Nginx → ser
 - **Chain Services:** One per blockchain (Bitcoin, Ethereum, Solana, etc.) with normalized APIs for balance, fees, transactions
 - **Data Layer:** Postgres DB Service + Hasura GraphQL
 - **Support Services:** NFT metadata, media caching, scheduled jobs, monitoring
+
+![Backend Microservices Overview](/secux-system.png)
+*Figure 2: Backend microservices overview*
 
 The modular design allows adding new blockchains without modifying existing services.
 
@@ -71,6 +77,9 @@ Our first SaaS offering: aggregating multiple swap providers (centralized + dece
 - **Provider-specific mappings:** What each service actually supports
 - **Order tracking:** User-level swap history and status
 
+![Swap Service Database Overview](/secux-swap.png)
+*Figure 3: Swap service database overview. We use cron jobs calling provider APIs,  then process and store asset data according to our own schema*
+
 ## AI-Powered Solution
 Instead of maintaining massive mapping tables or fuzzy matching, I used Gemini with grounding for real-time asset mapping. When encountering new tokens (common in EVM "lazy support"), the system generates structured mappings, saves to DB, and treats as permanent records.
 
@@ -86,6 +95,9 @@ DID works like a verifiable receipt: instead of storing records in company datab
 ## Implementation Approaches
 - **NFT identity passes:** Simple ownership-based access (own the NFT, get access)
 - **W3C DID standard:** Formal spec with on-chain identifier resolution backed by hardware wallet security
+
+![DID example](/secux-did.png)
+*Figure 4: DID example and workflow*
 
 ## My Role
 **Application design:** Joined partner calls to explore DID integration possibilities, sketched system designs for removing third-party verifiers, and explored integration with account abstraction and web-based blockchain login.
