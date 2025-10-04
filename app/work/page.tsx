@@ -14,14 +14,12 @@ export default function Work() {
       title: "Software Engineer",
       company: "Phoenix Silicon International Corporation",
       period: "Aug.2022 - Jan.2024",
-      summary: "Spearheaded complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing."
+      summary: "Led complete system overhaul of electronic wafer mapping systems for semiconductor manufacturing."
     }
   ]
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-2xl font-bold mb-8">Professional Experience</h1>
-
       <div className="space-y-6">
         {experiences.map((exp) => (
           <div key={exp.id}>

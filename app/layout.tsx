@@ -10,8 +10,14 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Kuan-Cheng Lung - Portfolio",
+  title: {
+    template: "KC Lung",
+    default: "KC Lung",
+  },
   description: "Software Engineer specializing in blockchain technology, full-stack development, and system optimization",
+  icons: {
+    icon: "/k.svg",
+  },
 };
 
 export default function RootLayout({

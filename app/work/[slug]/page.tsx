@@ -50,15 +50,6 @@ export default async function WorkExperiencePage({ params }: WorkExperiencePageP
   return (
     <div className="max-w-4xl">
       <article className="prose prose-gray max-w-none">
-        <header className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">{experience.title}</h1>
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4">
-            <h2 className="text-base text-gray-600">{experience.company}</h2>
-            <span className="text-gray-600 text-sm">{experience.period}</span>
-          </div>
-          <p className="text-sm text-gray-600 leading-relaxed">{experience.summary}</p>
-        </header>
-
         <div className="markdown-content">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
@@ -71,9 +62,17 @@ export default async function WorkExperiencePage({ params }: WorkExperiencePageP
               ol: ({children}) => <ol className="list-decimal list-inside mb-4 text-sm text-gray-700">{children}</ol>,
               li: ({children}) => <li className="mb-1 text-sm leading-relaxed">{children}</li>,
               strong: ({children}) => <strong className="font-semibold">{children}</strong>,
-              em: ({children}) => <em className="italic">{children}</em>,
+              em: ({children}) => {
+                // Check if this is a figure caption (starts with "Figure")
+                const text = children?.toString() || '';
+                if (text.startsWith('Figure')) {
+                  return <em className="italic text-gray-600 block text-center">{children}</em>;
+                }
+                return <em className="italic">{children}</em>;
+              },
               code: ({children}) => <code className="bg-gray-100 px-1 py-0.5 rounded text-sm">{children}</code>,
               pre: ({children}) => <pre className="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4">{children}</pre>,
+              img: ({src, alt}) => <img src={src} alt={alt} className="w-auto h-80 mx-auto my-5 block" />,
             }}
           >
             {markdownContent}

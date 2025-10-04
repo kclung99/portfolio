@@ -18,24 +18,21 @@ export default function Home() {
 
       <div className="space-y-6">
         <div>
-          <h3 className="text-2xl font-semibold mb-4">work experience</h3>
+          <h3 className="text-2xl font-semibold mb-4">work</h3>
           <div className="space-y-4">
             <div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                 <h3 className="font-medium text-base">SecuX Technology</h3>
                 <span className="text-sm text-gray-600 mt-1 sm:mt-0">May.2024 - June.2025</span>
               </div>
-              <p className="text-gray-600 mb-1 text-sm">Software Engineer</p><br />
-              <p className="text-gray-600 text-sm">I owned the entire backend service for our cold wallet app, ranges from network expansion, optimization to devops. I also architected and built out our first SaaS (crypto swap service) while involved heavily in a b2b DID (decentralized identity) project at the same time. really had a blast here.</p>
+              <p className="text-gray-600 mb-1 text-sm">Software Engineer</p>
             </div>
-            <br />
             <div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                 <h3 className="font-medium text-base">Phoenix Silicon International Corporation</h3>
                 <span className="text-sm text-gray-600 mt-1 sm:mt-0">Aug.2022 - Jan.2024</span>
               </div>
-              <p className="text-gray-600 mb-1 text-sm">Software Engineer</p><br />
-              <p className="text-gray-600 text-sm">I led the complete overhaul of the electronic wafer map (eMap) processing system. it aggregated multiple data sources while supporting overlaying, rotating, tagging, etc. I also built a library straight from machine specs supporting over a dozen wafer formats processing. hard but prideful work here.</p>
+              <p className="text-gray-600 mb-1 text-sm">Software Engineer</p>
             </div>
           </div>
         </div>
